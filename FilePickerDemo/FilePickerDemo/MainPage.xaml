@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FilePickerDemo.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Xamarin.Forms FilePicker Demo!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" />
+        </Frame>
+        <StackLayout Orientation="Horizontal">
+            <Button 
+                x:Name="FilePickerButton"
+                Text="Pick file"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="FilePickerButton_OnClicked" />
+            <Button
+                x:Name="ImageFilePickerButton"
+                Text="Pick images"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="ImageFilePickerButton_OnClicked" />
+            <Button
+                x:Name="ZipFilePickerButton"
+                Text="Pick ZIP files"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="ZipFilePickerButton_OnClicked" />
+        </StackLayout>
+
+        <ListView
+            x:Name="FileList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding FileName}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
